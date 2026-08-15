@@ -1,0 +1,293 @@
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: #f4f6f8;
+  color: #213547;
+  overflow: hidden;
+}
+
+button, input {
+  font: inherit;
+}
+
+.dashboard {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.dashboard-header {
+  display: none;
+}
+
+#app-name {
+  font-weight: 700;
+  font-size: 16px;
+  margin: 0;
+}
+
+.dashboard-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  color: #b0b0b0;
+}
+
+.dashboard-user button {
+  background: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.dashboard-user button:hover {
+  background: #004085;
+}
+
+.app-header {
+  background: linear-gradient(135deg, #0056b3 0%, #004085 100%);
+  color: #fff;
+  padding: 8px 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  position: relative;
+  flex-shrink: 0;
+  z-index: 1000;
+}
+
+.app-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.app-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  position: absolute;
+  right: 12px;
+}
+
+.status-label {
+  font-size: 11px;
+  color: rgba(255,255,255,0.8);
+}
+
+.status-badge {
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.navbar {
+  background-color: #333;
+  padding: 10px 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  color: #fff;
+  flex-shrink: 0;
+  z-index: 1000;
+}
+
+.navbar-left {
+  font-size: 12px;
+  color: #b0b0b0;
+}
+
+.user-info {
+  font-size: 12px;
+  color: #b0b0b0;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+  justify-content: center;
+}
+
+.btn-action {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.3s;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.btn-action.start {
+  background-color: #28a745;
+}
+
+.btn-action.start:hover {
+  background-color: #218838;
+}
+
+.btn-action.end {
+  background-color: #dc3545;
+}
+
+.btn-action.end:hover {
+  background-color: #c82333;
+}
+
+.cam-label {
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  transition: opacity 0.3s;
+  flex-shrink: 0;
+}
+
+.cam-label:hover {
+  opacity: 0.8;
+}
+
+.menu-hamburger {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.btn-hamburger {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  transition: opacity 0.3s;
+}
+
+.btn-hamburger:hover {
+  opacity: 0.8;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  min-width: 150px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 1001;
+  margin-top: 5px;
+}
+
+.dropdown-item {
+  width: 100%;
+  padding: 10px 15px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  color: #333;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown-item i {
+  width: 16px;
+  text-align: center;
+}
+
+#map {
+  position: absolute;
+  top: 95px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 95px);
+  z-index: 1;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.map-placeholder {
+  flex: 1;
+  padding: 24px;
+}
+
+.locate-control {
+  background-color: white;
+  border-radius: 4px;
+  padding: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.locate-btn {
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.locate-btn:hover {
+  background-color: #004085;
+}
+
+.leaflet-control-container {
+  z-index: 999 !important;
+}
+
+.leaflet-top {
+  top: 70px !important;
+}
+
+.leaflet-right {
+  right: 10px !important;
+}
