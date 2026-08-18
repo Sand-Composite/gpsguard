@@ -4,7 +4,7 @@ import '../assets/styles/login.css'
 export default function LoginPage({ onLogin }) {
   const [showRegister, setShowRegister] = useState(false)
   const [loginForm, setLoginForm] = useState({ user: '', pass: '' })
-  const [registerForm, setRegisterForm] = useState({ name: '', rut: '', user: '', pass: '' })
+  const [registerForm, setRegisterForm] = useState({ name: '', email: '', user: '', pass: '' })
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
 
@@ -88,8 +88,8 @@ export default function LoginPage({ onLogin }) {
           <h1>GPSGuard ®</h1>
           <h3>Crear Cuenta</h3>
 
-          <input type="text" name="name" placeholder="Nombre y Apellido (ej. Julio)" value={registerForm.name} onChange={handleRegisterChange} required />
-          <input type="text" name="rut" placeholder="RUT (ej. 12.345.678-9)" value={registerForm.rut} onChange={handleRegisterChange} required />
+          <input type="text" name="name" placeholder="Nombre y Apellido" value={registerForm.name} onChange={handleRegisterChange} required />
+          <input type="text" name="rut" placeholder="usuario@email.com" value={registerForm.rut} onChange={handleRegisterChange} required />
           <input type="text" name="user" placeholder="Nuevo Usuario" value={registerForm.user} onChange={handleRegisterChange} required />
           <input type="password" name="pass" placeholder="Nueva Contraseña" value={registerForm.pass} onChange={handleRegisterChange} required />
 
@@ -109,7 +109,7 @@ export default function LoginPage({ onLogin }) {
         <h1>GPSGuard ®</h1>
         <h3>Iniciar Sesión</h3>
 
-        <input type="text" name="user" placeholder="Usuario o RUT" value={loginForm.user} onChange={handleLoginChange} autoComplete="username" required />
+        <input type="text" name="user" placeholder="Usuario" value={loginForm.user} onChange={handleLoginChange} autoComplete="username" required />
         <input type="password" name="pass" placeholder="Contraseña" value={loginForm.pass} onChange={handleLoginChange} autoComplete="current-password" required />
 
         {error ? <p className="login-error">{error}</p> : null}
