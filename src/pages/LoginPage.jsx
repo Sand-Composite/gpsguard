@@ -89,9 +89,9 @@ export default function LoginPage({ onLogin }) {
           <h3>Crear Cuenta</h3>
 
           <input type="text" name="name" placeholder="Nombre y Apellido" value={registerForm.name} onChange={handleRegisterChange} required />
-          <input type="text" name="rut" placeholder="usuario@email.com" value={registerForm.rut} onChange={handleRegisterChange} required />
-          <input type="text" name="user" placeholder="Nuevo Usuario" value={registerForm.user} onChange={handleRegisterChange} required />
-          <input type="password" name="pass" placeholder="Nueva Contraseña" value={registerForm.pass} onChange={handleRegisterChange} required />
+          <input type="text" name="rut" placeholder="E-mail (usuario@email.com)" value={registerForm.rut} onChange={handleRegisterChange} required />
+          <input type="text" name="user" placeholder="Contraseña (minimo 4 números)" value={registerForm.user} onChange={handleRegisterChange} required />
+          <input type="password" name="pass" placeholder="Repita Contraseña" value={registerForm.pass} onChange={handleRegisterChange} required />
 
           {error ? <p className="login-error">{error}</p> : null}
 
